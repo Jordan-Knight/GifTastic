@@ -14,7 +14,7 @@ var app = {
         });
     },
 
-    populateButtons : function(arg){
+    populateGifs: function(arg){
         var results = arg.data;
 
          for (var i = 0; i < results.length; i++) {
@@ -31,7 +31,19 @@ var app = {
             gifDiv.prepend(personImage);
 
             $("#gifs").prepend(gifDiv);
-    }
+         }
+    },
+
+    populateButtons : function(){
+        for (i = 0; i < buttonArray.length; i++){
+            var button = $("<button>");
+            button.addClass("primary movie");
+            button.text(buttonArray[i]);
+            button.attr("data-name", buttonArray[i]);
+            $("#buttons").append(button)
+        }
+
+    },
 
 
 
@@ -40,3 +52,4 @@ var app = {
 
 
 }
+
